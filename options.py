@@ -3,3 +3,9 @@ def ancestries():
     return ances
 
 print(ancestries())
+
+def backgrounds():
+    backs = ["Acolyte", "Artisan", "Hunter", "Performer", "Scholar", "Soldier"]
+    return backs
+
+print(backgrounds())
