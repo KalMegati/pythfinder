@@ -1,11 +1,11 @@
 import options
 
-backgrounds = options.backgrounds()
+classes = options.classes()
 
 
-for id, back in enumerate(backgrounds): 
-    print (f'{id+1}) {back}')
+for id, clas in enumerate(classes): 
+    print (f'{id+1}) {clas}')
 
 choice = input("select a number")
 
-print(backgrounds[int(choice)-1])
+print(classes[int(choice)-1])
