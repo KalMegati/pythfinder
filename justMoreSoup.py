@@ -13,4 +13,9 @@ headers = {
 url = "https://2e.aonprd.com/Classes.aspx"
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
-print(soup.prettify())
+classes = []
+for link in soup.find_all('a'):
+    if "Classes.aspx?ID" in link.get('href'):
+        classes.append(link.text)
+
+print(classes)
