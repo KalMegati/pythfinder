@@ -10,7 +10,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
     }
 
-url = "http://example.com"
+url = "https://2e.aonprd.com/Classes.aspx"
 req = requests.get(url, headers)
 soup = BeautifulSoup(req.content, 'html.parser')
 print(soup.prettify())
