@@ -22,4 +22,4 @@
 
 import options
 
-print(options.ancestries())
+print(options.backgrounds())

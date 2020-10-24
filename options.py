@@ -31,8 +31,7 @@ def ancestries():
     return ancs
 
 def backgrounds():
-    bacs = ["Acolyte", "Artisan", "Hunter", "Performer", "Scholar", "Soldier"]
-    return bacs
+    return linker("Backgrounds")
 
 # def classes():
 #     clas = ["Alchemist", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Wizard"]
