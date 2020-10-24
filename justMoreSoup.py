@@ -22,4 +22,4 @@
 
 import options
 
-print(options.classes)
+print(options.classes())

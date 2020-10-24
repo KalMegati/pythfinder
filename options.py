@@ -10,13 +10,16 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
     }
 
-url = "https://2e.aonprd.com/Classes.aspx"
-req = requests.get(url, headers)
-soup = BeautifulSoup(req.content, 'html.parser')
-classes = []
-for link in soup.find_all('a'):
-    if "Classes.aspx?ID" in link.get('href'):
-        classes.append(link.text)
+def classes():
+    url = "https://2e.aonprd.com/Classes.aspx"
+    req = requests.get(url, headers)
+    soup = BeautifulSoup(req.content, 'html.parser')
+    links = []
+    for link in soup.find_all('a'):
+        if "Classes.aspx?ID" in link.get('href'):
+            links.append(link.text)
+    return links
+
 
 def ancestries():
     ancs = ["Dwarf", "Elf", "Gnome", "Goblin", "Halfling", "Human", "Orc"]
