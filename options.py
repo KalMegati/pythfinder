@@ -24,7 +24,11 @@ def classes():
 
 
 def ancestries():
-    return linker("Ancestries")
+    doub_ancs =  linker("Ancestries")
+    def filterAncs(link):
+        return not("Click here" in link)
+    ancs = list(filter(filterAncs, doub_ancs))
+    return ancs
 
 def backgrounds():
     bacs = ["Acolyte", "Artisan", "Hunter", "Performer", "Scholar", "Soldier"]
