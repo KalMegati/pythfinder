@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-
 headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET',
@@ -10,15 +9,18 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
     }
 
-def classes():
-    url = "https://2e.aonprd.com/Classes.aspx"
+def linker(aspect):
+    url = f"https://2e.aonprd.com/{aspect}.aspx"
     req = requests.get(url, headers)
     soup = BeautifulSoup(req.content, 'html.parser')
     links = []
     for link in soup.find_all('a'):
-        if "Classes.aspx?ID" in link.get('href'):
+        if f"{aspect}.aspx?ID" in link.get('href'):
             links.append(link.text)
     return links
+
+def classes():
+    return linker("Classes")
 
 
 def ancestries():
