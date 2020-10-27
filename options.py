@@ -13,10 +13,10 @@ def linker(aspect):
     url = f"https://2e.aonprd.com/{aspect}.aspx"
     req = requests.get(url, headers)
     soup = BeautifulSoup(req.content, 'html.parser')
-    links = []
+    links = {}
     for link in soup.find_all('a'):
         if f"{aspect}.aspx?ID" in link.get('href'):
-            links.append(link.text)
+            links[link.text] = link.get('href')
     return links
 
 def classes():
