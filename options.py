@@ -23,16 +23,13 @@ def classes():
     return linker("Classes")
 
 
-def ancestries():
-    doub_ancs =  linker("Ancestries")
-    def filterAncs(link):
-        return not("Click here" in link)
-    ancs = list(filter(filterAncs, doub_ancs))
-    return ancs
+# def ancestries():
+#     doub_ancs =  linker("Ancestries")
+#     def filterAncs(link):
+#         return not("Click here" in link)
+#     ancs = list(filter(filterAncs, doub_ancs))
+#     return ancs
 
 def backgrounds():
     return linker("Backgrounds")
 
-# def classes():
-#     clas = ["Alchemist", "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Wizard"]
-#     return clas
