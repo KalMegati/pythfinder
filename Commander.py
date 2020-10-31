@@ -1,3 +1,5 @@
+import option_accessor as o_a
+
 class Commander:
 
     def titlecard():
@@ -14,3 +16,8 @@ class Commander:
         print ("This application will help you organize basic character ideas.")
         print ("__________________________________________________________________")
         print ("")
+
+    def present_choice():
+        link = o_a.get_choice()
+        print(o_a.summarizer(link))
+

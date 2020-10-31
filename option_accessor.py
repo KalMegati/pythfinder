@@ -5,13 +5,11 @@ import options
 
 classes = options.classes()
 
-
-for id, clas in enumerate(classes.keys()): 
-    print (f'{id+1}) {clas}')
-
-choice = input("select a number \n")
-
-op_link = classes[list(classes.keys())[int(choice)-1]]
+def get_choice():
+    for id, clas in enumerate(classes.keys()): 
+        print (f'{id+1}) {clas}')
+    choice = input("select a number \n")
+    return classes[list(classes.keys())[int(choice)-1]]
 
 headers = {
     'Access-Control-Allow-Origin': '*',
@@ -27,4 +25,4 @@ def summarizer(link):
     soup = BeautifulSoup(req.content, 'html.parser')
     return soup.find_all("i")[1].text
 
-print(summarizer(op_link))
+#print(summarizer(op_link))
