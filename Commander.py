@@ -21,3 +21,8 @@ class Commander:
         link = o_a.get_choice()
         print(o_a.summarizer(link))
 
+    def confirm_choice():
+        confirm = input("Enter Y(es) or N(o): ")
+        return confirm
+
+    
